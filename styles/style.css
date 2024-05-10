@@ -75,10 +75,6 @@
     background-color: var(--bg-color);
 }
 
-#pricing .package-list {
-    
-}
-
 #pricing .package-list .list-group-item {
     border-radius: 10px;
     transition: .5s;
@@ -149,4 +145,37 @@ footer .shortcut-links a:hover{
 }
 .btn-custom-1:hover {
     background-color: var(--main-color-hover);
+}
+
+
+/* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ 
+@media (max-width:540px)  {
+    #hero {
+        background-color: var(--main-color);
+        min-height: 60vh;
+    }
+    #hero .screen-image-hero {
+        border-radius: 0 0 20px 20px;
+        height: 40vh;
+    }
+    #hero .screen-image-hero img {
+        height: 90vh;
+    }
+
+    #short-info .text-desc {
+        padding: 10px;
+    }
+    #short-info .text-desc {
+        padding: 40px;
+    }
+    #short-info .img-desc {
+        padding: 20px;
+    }
+
+    #pricing {
+        padding: 30px 10px;
+        border-radius: 20px;
+        background-color: var(--bg-color);
+    }
+    
 }
