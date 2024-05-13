@@ -16,7 +16,7 @@
     <main>
         <nav class="navbar navbar-expand-lg bg-dark" id="main-navbar" data-bs-theme="dark">
             <div class="container">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="#hero">
                     <img src="/images/logo.png" class="img-fluid" alt="">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -27,22 +27,19 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 me-4 mb-lg-0 gap-3">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Beranda</a>
+                            <a class="nav-link active" aria-current="page" href="#"><i class="fas fa-home"></i></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Produk</a>
+                            <a class="nav-link" href="#pricing">Harga</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Harga</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">FAQ</a>
+                            <a class="nav-link" href="#faq">FAQ</a>
                         </li>
                     </ul>
                     <div class="d-flex" role="search">
-                        <button id="cta-to-buy" class="btn btn-warning rounded-pill me-2" type="button">
+                        <a href="#pricing" id="cta-to-buy" class="btn btn-warning rounded-pill me-2">
                             <i class="fas fa-fw fa-shopping-cart"></i> Pesan Sekarang
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -64,8 +61,8 @@
                             Bangun chatbot yang interaktif hanya dalam 3 menit <br> <b> tanpa coding </b> di sosial media Anda.
                         </p>
                         <div class="mt-3 d-flex flex-wrap gap-3">
-                            <a href="#" class="btn px-4 py-2 rounded-pill btn-dark"><i class="fas fa-fw fa-arrow-down"></i> Pelajari Selengkapnya</a>
-                            <a href="#" class="btn px-4 py-2 rounded-pill btn-outline-dark">Lihat Harga Paket</a>
+                            <a href="#pricing" class="btn w-auto px-4 py-2 rounded-pill btn-dark"><i class="fas fa-gift fa-fw"></i> Lihat Paket</a>
+                            <a href="#faq" class="btn w-auto px-4 py-2 rounded-pill btn-outline-dark"><i class="fas fa-fw fa-arrow-down"></i> Pelajari Selengkapnya</a>
                         </div>
                     </div>
                 </div>
@@ -107,7 +104,7 @@
                                 </label>
                                 <div class="d-flex align-items-center gap-2">
                                     <small>Rp. 0/Pesan</small>
-                                    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="0" id="firstRadio" checked>
+                                    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="0" data-price="0" data-min-quota="0" data-max-quota="10" id="firstRadio" checked>
                                 </div>
                             </li>
                             <li class="list-group-item d-flex align-items-center justify-content-between">
@@ -117,7 +114,7 @@
                                 </label>
                                 <div class="d-flex align-items-center gap-2">
                                     <small>Rp. 250/Pesan</small>
-                                    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="250" id="secondRadio">
+                                    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="250" data-price="250" data-min-quota="1000" data-max-quota="99000" id="secondRadio">
                                 </div>
                             </li>
                             <li class="list-group-item d-flex align-items-center justify-content-between">
@@ -127,7 +124,7 @@
                                 </label>
                                 <div class="d-flex align-items-center gap-2">
                                     <small>Rp. 230/Pesan</small>
-                                    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="230" id="thirdRadio">
+                                    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="230" data-price="230" data-min-quota="100000" data-max-quota="499999" id="thirdRadio">
                                 </div>
                             </li>
                             <li class="list-group-item d-flex align-items-center justify-content-between">
@@ -137,7 +134,7 @@
                                 </label>
                                 <div class="d-flex align-items-center gap-2">
                                     <small>Rp. 220/Pesan</small>
-                                    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="220" id="fourRadio">
+                                    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="220" data-price="220" data-min-quota="500000" data-max-quota="999999" id="fourRadio">
                                 </div>
                             </li>
                             <li class="list-group-item d-flex align-items-center justify-content-between">
@@ -147,7 +144,7 @@
                                 </label>
                                 <div class="d-flex align-items-center gap-2">
                                     <small>Rp. 200/Pesan</small>
-                                    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="200" id="fiveRadio">
+                                    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="200" data-price="200" data-min-quota="1000000" data-max-quota="2000000" id="fiveRadio">
                                 </div>
                             </li>
                         </ul>
@@ -160,15 +157,15 @@
 
                                 <div class="mb-2">
                                     <label for="buyer_name" class="form-label fw-medium">Nama Lengkap</label>
-                                    <input type="text" class="form-control" id="buyer_name">
+                                    <input type="text" class="form-control" name="buyer_name" id="buyer_name" required>
                                 </div>
                                 <div class="mb-2">
                                     <label for="buyer_telp" class="form-label fw-medium">Nomor WhatsApp</label>
-                                    <input type="text" class="form-control" id="buyer_telp">
+                                    <input type="text" class="form-control" name="buyer_telp" id="buyer_telp" required>
                                 </div>
                                 <div class="mb-2">
                                     <label for="buyer_email" class="form-label fw-medium">Email</label>
-                                    <input type="text" class="form-control" id="buyer_email">
+                                    <input type="text" class="form-control" name="buyer_email" id="buyer_email" required>
                                 </div>
 
                             </div>
@@ -181,13 +178,14 @@
                                     <span class="input-group-text bg-transparent">
                                         <button class="btn btn-secondary"><i class="fas fa-minus"></i></button>
                                     </span>
-                                    <input type="number" min="0" value="0" class="form-control border-end-0 border-start-0 text-center">
+                                    <input type="number" id="qtyRequest" name="qty_request" min="0" value="0" class="form-control border-end-0 border-start-0 text-center" readonly required>
                                     <span class="input-group-text bg-transparent">
                                         <button class="btn btn-warning"><i class="fas fa-plus"></i></button>
                                     </span>  
                                 </div>
 
                                 <div class="text-center my-4">
+                                    <input type="hidden" class="form-control" name="price_amount" id="price_amount">
                                     <div id="totalPriceAmount" class="fs-2 mb-3 text-success text-center fw-bold">
                                         Rp 0
                                     </div>
@@ -416,8 +414,8 @@
                 <div class="row">
                     <div class="col-md-7">
                         <ul class="nav d-flex flex-wrap gap-3 shortcut-links">
-                            <li class="nav-item border-0"><a href="#">Harga</a></li>
-                            <li class="nav-item border-0"><a href="#">FAQ</a></li>
+                            <li class="nav-item border-0"><a href="#pricing">Harga</a></li>
+                            <li class="nav-item border-0"><a href="#faq">FAQ</a></li>
                             <li class="nav-item border-0"><a href="#">Syarat & Ketentuan</a></li>
                             <li class="nav-item border-0"><a href="#">Kebijakan Privasi</a></li>
                         </ul>
@@ -436,136 +434,100 @@
     <script src="/libraries/fontawesome/js/all.min.js"></script>
 
     <script>
-        function handleItemClick(id) {
-            // Menghapus kelas bg-warning dari semua elemen list-group-item
-            var items = document.querySelectorAll('.list-group-item');
-            items.forEach(function(item) {
-                item.classList.remove('bg-warning');
+        document.addEventListener('DOMContentLoaded', function() {
+            var packageRadios = document.querySelectorAll('input[name="listGroupRadio"]');
+            var qtyInput = document.getElementById('qtyRequest');
+            var totalPriceDisplay = document.getElementById('totalPriceAmount');
+            var priceAmountInput = document.getElementById('price_amount');
+    
+            // Fungsi untuk menghitung total harga berdasarkan harga dan jumlah broadcast
+            function calculateTotalPrice(price, quantity) {
+                return price * quantity;
+            }
+    
+            // Menggunakan event listener untuk setiap radio button
+            packageRadios.forEach(function(radio) {
+                radio.addEventListener('change', function() {
+                    // Menghapus kelas 'bg-warning' dari semua item
+                    packageRadios.forEach(function(radio) {
+                        radio.parentElement.parentElement.classList.remove('bg-warning');
+                    });
+    
+                    // Menambahkan kelas 'bg-warning' pada item yang dipilih
+                    this.parentElement.parentElement.classList.add('bg-warning');
+    
+                    // Mengecek radio button yang dipilih
+                    packageRadios.forEach(function(radio) {
+                        radio.checked = false;
+                    });
+                    this.checked = true;
+    
+                    var selectedPrice = parseInt(this.getAttribute('data-price'));
+                    var selectedMinQuota = parseInt(this.getAttribute('data-min-quota'));
+                    var selectedMaxQuota = parseInt(this.getAttribute('data-max-quota'));
+                    var selectedQuantity = selectedMinQuota; // Mengambil data-min-quota sebagai jumlah broadcast
+    
+                    qtyInput.value = selectedQuantity; // Set nilai pada input jumlah broadcast
+    
+                    var totalPrice = calculateTotalPrice(selectedPrice, selectedQuantity);
+    
+                    totalPriceDisplay.textContent = "Rp " + totalPrice.toLocaleString('id-ID'); // Menampilkan total harga
+                    priceAmountInput.value = totalPrice; // Set nilai pada input hidden untuk proses selanjutnya (jika ada)
+                });
             });
     
-            // Menambahkan kelas bg-warning ke elemen yang di-klik
-            var clickedItem = document.getElementById(id);
-            clickedItem.classList.add('bg-warning');
+            // Event listener untuk tombol tambah dan kurang
+            var plusButton = document.querySelector('.input-group .btn-warning');
+            var minusButton = document.querySelector('.input-group .btn-secondary');
     
-            // Memastikan bahwa elemen radio yang sesuai di-klik
-            clickedItem.querySelector('input[type="radio"]').click();
-        }
-
-        
-        document.addEventListener("DOMContentLoaded", function () {
-            // Fungsi untuk menghitung total harga berdasarkan jumlah broadcast yang dimasukkan
-            function calculateTotalPrice() {
-                // Ambil nilai jumlah broadcast dari input
-                var broadcastCount = parseInt(document.querySelector(".input-group input").value);
-                // Ambil harga per pesan berdasarkan radio button yang dipilih
-                var pricePerMessage = parseInt(document.querySelector("input[name='listGroupRadio']:checked").value);
-                // Hitung total harga
-                var totalPrice = broadcastCount * pricePerMessage;
-                // Tampilkan total harga dengan format Rupiah
-                document.getElementById("totalPriceAmount").innerText = "Rp " + totalPrice.toLocaleString('id-ID');
-            }
-
-            // Fungsi untuk menambahkan kelas CSS pada elemen yang di-klik
-            function highlightListItem(clickedElement) {
-                // Hapus kelas 'bg-warning' dari semua elemen daftar
-                var allListItems = document.querySelectorAll('.list-group-item');
-                allListItems.forEach(function (item) {
-                    item.classList.remove('bg-warning');
-                });
-
-                // Tambahkan kelas 'bg-warning' pada elemen yang di-klik
-                clickedElement.classList.add('bg-warning');
-            }
-
-            // Fungsi untuk menangani pemilihan radio
-            function handleRadioSelection(radio) {
-                // Dapatkan elemen daftar yang sesuai dengan radio
-                var listItem = radio.closest('.list-group-item');
-                // Panggil fungsi untuk menyoroti elemen daftar yang dipilih
-                highlightListItem(listItem);
-                // Hitung ulang total harga saat radio dipilih
-                calculateTotalPrice();
-            }
-
-            // Panggil fungsi handleRadioSelection saat salah satu radio dipilih
-            var radioButtons = document.querySelectorAll("input[name='listGroupRadio']");
-            radioButtons.forEach(function (radio) {
-                radio.addEventListener('change', function () {
-                    handleRadioSelection(this);
-                });
-            });
-
-            // Panggil fungsi highlightListItem saat salah satu elemen daftar di-klik
-            var listItems = document.querySelectorAll('.list-group-item');
-            listItems.forEach(function (item) {
-                item.addEventListener('click', function () {
-                    // Dapatkan radio di dalam elemen daftar
-                    var radio = this.querySelector("input[name='listGroupRadio']");
-                    // Jika radio tidak dipilih, pilih radio
-                    if (!radio.checked) {
-                        radio.checked = true;
-                        // Panggil fungsi untuk menyoroti elemen daftar yang dipilih
-                        highlightListItem(this);
-                        // Hitung ulang total harga saat elemen daftar diklik
-                        calculateTotalPrice();
-                    }
-                });
-            });
-
-            // Panggil fungsi calculateTotalPrice saat nilai jumlah broadcast berubah
-            document.querySelector(".input-group input").addEventListener("input", calculateTotalPrice);
-        });
-
-
-        document.addEventListener("DOMContentLoaded", function () {
-            // Fungsi untuk menghitung total harga berdasarkan jumlah broadcast yang dimasukkan
-            function calculateTotalPrice() {
-                // Ambil nilai jumlah broadcast dari input
-                var broadcastCount = parseInt(document.querySelector(".input-group input").value);
-                // Ambil harga per pesan berdasarkan radio button yang dipilih
-                var pricePerMessage = parseInt(document.querySelector("input[name='listGroupRadio']:checked").value);
-                // Hitung total harga
-                var totalPrice = broadcastCount * pricePerMessage;
-                // Tampilkan total harga
-                document.getElementById("totalPriceAmount").innerText = "Rp " + totalPrice.toLocaleString('id-ID');
-            }
-
-            // Fungsi untuk menangani penambahan dan pengurangan jumlah broadcast
-            function handleBroadcastQuantity(action) {
-                var input = document.querySelector(".input-group input");
-                var currentValue = parseInt(input.value);
-                // Jika tombol tambah diklik, tambahkan 1 ke nilai saat ini
-                if (action === "add") {
-                    input.value = currentValue + 1;
+            plusButton.addEventListener('click', function() {
+                var selectedRadio = document.querySelector('input[name="listGroupRadio"]:checked');
+                var selectedMaxQuota = parseInt(selectedRadio.getAttribute('data-max-quota'));
+    
+                if (parseInt(qtyInput.value) < selectedMaxQuota) {
+                    qtyInput.value = parseInt(qtyInput.value) + 1;
+                    updateTotalPrice();
                 }
-                // Jika tombol kurang diklik, kurangi 1 dari nilai saat ini jika nilainya lebih besar dari 0
-                else if (action === "subtract" && currentValue > 0) {
-                    input.value = currentValue - 1;
+            });
+    
+            minusButton.addEventListener('click', function() {
+                var selectedRadio = document.querySelector('input[name="listGroupRadio"]:checked');
+                var selectedMinQuota = parseInt(selectedRadio.getAttribute('data-min-quota'));
+    
+                if (parseInt(qtyInput.value) > selectedMinQuota) {
+                    qtyInput.value = parseInt(qtyInput.value) - 1;
+                    updateTotalPrice();
                 }
-                // Panggil fungsi calculateTotalPrice untuk mengupdate total harga
-                calculateTotalPrice();
+            });
+    
+            // Fungsi untuk memperbarui total harga saat jumlah broadcast berubah
+            function updateTotalPrice() {
+                var selectedRadio = document.querySelector('input[name="listGroupRadio"]:checked');
+                var selectedPrice = parseInt(selectedRadio.getAttribute('data-price'));
+                var selectedQuantity = parseInt(qtyInput.value);
+                var totalPrice = calculateTotalPrice(selectedPrice, selectedQuantity);
+    
+                totalPriceDisplay.textContent = "Rp " + totalPrice.toLocaleString('id-ID'); // Menampilkan total harga
+                priceAmountInput.value = totalPrice; // Set nilai pada input hidden untuk proses selanjutnya (jika ada)
             }
-
-            // Panggil fungsi calculateTotalPrice saat nilai jumlah broadcast berubah
-            document.querySelector(".input-group input").addEventListener("input", calculateTotalPrice);
-
-            // Panggil fungsi calculateTotalPrice saat radio button dipilih
-            var radioButtons = document.querySelectorAll("input[name='listGroupRadio']");
-            radioButtons.forEach(function (radio) {
-                radio.addEventListener("change", calculateTotalPrice);
-            });
-
-            // Panggil fungsi handleBroadcastQuantity saat tombol tambah diklik
-            document.querySelector(".input-group .btn-warning").addEventListener("click", function () {
-                handleBroadcastQuantity("add");
-            });
-
-            // Panggil fungsi handleBroadcastQuantity saat tombol kurang diklik
-            document.querySelector(".input-group .btn-secondary").addEventListener("click", function () {
-                handleBroadcastQuantity("subtract");
+    
+            // Event listener untuk setiap list-group-item
+            var listGroupItems = document.querySelectorAll('.list-group-item');
+            listGroupItems.forEach(function(item) {
+                item.addEventListener('click', function() {
+                    var radio = this.querySelector('input[name="listGroupRadio"]');
+                    radio.checked = true;
+    
+                    // Trigger event change pada radio button
+                    var event = new Event('change');
+                    radio.dispatchEvent(event);
+                });
             });
         });
     </script>
+    
+
+
 </body>
 
 </html>
